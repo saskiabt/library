@@ -49,34 +49,25 @@ bookButton.addEventListener('click', () => {
     let form = document.createElement('form'); 
         let formBox = document.getElementById('form-box');
         formBox.appendChild(form); 
-    
         form.setAttribute('method', "post"); 
         form.setAttribute('action', 'submit.php'); 
+
+        function createForm(name) { 
+            const label = document.createElement('label'); 
+            label.setAttribute('for', `${name}`)
+            label.innerHTML = `${name}`; 
+            form.appendChild(label); 
+        
+            let input = document.createElement('input'); 
+            form.appendChild(input); 
+            input.setAttribute('type', 'text'); 
+            input.setAttribute('id', `${name}`); 
+        }
+        
+        createForm('Title');
+        createForm('Author'); 
+        createForm('Pages');
+        createForm('IsRead');
+
+}); 
    
-    // create inputs on the form
-    let title = document.createElement('input'); 
-    form.append(title); 
-    title.setAttribute('type', "text"); 
-    title.setAttribute('id', "title"); 
-    
-    const titleLabel = document.createElement('label'); 
-    titleLabel.setAttribute('for', "title"); 
-    titleLabel.innerHTML = "Title:"
-
-
-
-    let author = document.createElement('input'); 
-    form.append(author); 
-
-    let pages = document.createElement('input'); 
-    form.append(pages); 
-
-    let isRead = document.createElement('input'); 
-    form.append(isRead); 
-
-
-
-
-
-})
-
