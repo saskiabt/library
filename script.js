@@ -45,29 +45,53 @@ function addBookToLibrary(book) {
 const bookButton = document.getElementById("create-book-button"); 
 bookButton.addEventListener('click', () => {
     bookButton.style.visibility = "hidden"; 
+    openForm(); 
 
-    let form = document.createElement('form'); 
-        let formBox = document.getElementById('form-box');
-        formBox.appendChild(form); 
-        form.setAttribute('method', "post"); 
-        form.setAttribute('action', 'submit.php'); 
+    document.querySelector("#popup-form > form > ul > button.cancel-btn").addEventListener('click', () => { 
+        closeForm();
+        bookButton.style.visibility = "visible";
+    });
+});
 
-        function createForm(name) { 
-            const label = document.createElement('label'); 
-            label.setAttribute('for', `${name}`)
-            label.innerHTML = `${name}`; 
-            form.appendChild(label); 
+function openForm() { 
+    document.getElementById('popup-form').style.display = "block"; 
+}
+
+function closeForm() { 
+    document.getElementById('popup-form').style.display = "none"; 
+}
+    // let form = document.createElement('form'); 
+    //     let formBox = document.getElementById('form-box');
+    //     formBox.appendChild(form); 
+    //     form.setAttribute('method', "post"); 
+    //     form.setAttribute('action', 'submit.php'); 
+
+    //     function createForm(name) { 
+    //         const bullet = document.createElement('ul'); 
+    //         form.appendChild(bullet)
+    //         const label = document.createElement('label'); 
+    //         label.setAttribute('for', `${name}`)
+    //         label.innerHTML = `${name}`; 
+    //         bullet.appendChild(label); 
         
-            let input = document.createElement('input'); 
-            form.appendChild(input); 
-            input.setAttribute('type', 'text'); 
-            input.setAttribute('id', `${name}`); 
-        }
+    //         let input = document.createElement('input'); 
+    //         bullet.appendChild(input); 
+    //         input.setAttribute('type', 'text'); 
+    //         input.setAttribute('id', `${name}`); 
+    //         input.setAttribute('name', `${name}`); 
+    //     }
         
-        createForm('Title');
-        createForm('Author'); 
-        createForm('Pages');
-        createForm('IsRead');
+    //     createForm('Title');
+    //     createForm('Author'); 
+    //     createForm('Pages');
+    //     createForm('isRead');
+    //         document.querySelector("#isRead").setAttribute('type', "checkbox"); 
+    //         document.querySelector("#form-box > form > ul:nth-child(4) > label").innerHTML = 'Have you already read this book?'
 
-}); 
+        
+    //     formBox.appendChild(document.createElement('ul')); 
+
+
+      
+
    
