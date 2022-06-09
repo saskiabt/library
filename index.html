@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
     <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://use.typekit.net/lnn4qbi.css">
 </head>
 <body>
     <div id = "content">
@@ -13,30 +14,44 @@
             <div id = "title-text">Library</div>
         </div>
         <div id = "hero">
-            <div id = "create-book-box">
-                <button id = "create-book-button">Create Book</button>
+            <div id = "button-box">
+                <button id = "create-book-button">Add Book</button>
             </div>
             <div id = "popup-form">
                 <form action="/submit.php" method="post" class = "form-container">
                     <ul>
-                        <li id="list-item-1">
+                        <li id="form-item-1">
                             <label for="title">Title:</label>
                             <input type = "text" id = "title" name='book'>
                         </li>
-                        <li id="list-item-2">
+                        <li id="form-item-2">
                             <label for="author">Author:</label>
                             <input type = "text" id = "author" name='book'>
                         </li>
-                        <li id="list-item-3">
+                        <li id="form-item-3">
                             <label for="pages">Page Count:</label>
                             <input type = "text" id = "pages" name='book'>
                         </li>
-                        <li id="list-item-4">
-                            <label for="read">Have you finished this book?:</label>
-                            <input type = "checkbox" id = "read" name='book'>
+                        <li id="form-item-4">
+                            <div>Have you finished this book?</div>
+                            <div>
+                                <input type = "button" value = "Y" type = "button" id="finished">
+                                <input type = "button" value = "N" type = "button" id="not-finished">
+                            </div>
                         </li>
-                        <button type = "submit">Submit</button>
-                        <button type = "button" class = "cancel-btn">Cancel</button>
+                        <li id="form-item-5">
+                            <div>Review<div>
+                                <input type = "button" type = "button" id = "1star" class="stars">
+                                <input type = "button" type = "button" id = "2star" class="stars">
+                                <input type = "button" type = "button" id = "3star" class="stars">
+                                <input type = "button" type = "button" id = "4star" class="stars">
+                                <input type = "button" type = "button" id = "5star" class="stars">
+                        </li>
+                        <li id = "list-item-5">
+                            <button type = "submit">Submit</button>
+                            <button type = "button" class = "cancel-btn">Cancel</button>
+                        </li>
+                   
                     </ul>
                 </form>
             </div>
