@@ -114,17 +114,17 @@ function displayBooks() {
         card.classList.add('card'); 
         libraryWrapper.appendChild(card); 
 
-        const front = document.createElement('div'); 
-        card.appendChild(front); 
-        front.classList.add('front'); 
-        front.textContent = myLibrary[i].title; 
+        const title = document.createElement('div'); 
+        card.appendChild(title); 
+        title.classList.add('book-title'); 
+        title.textContent = myLibrary[i].title; 
 
-        const back = document.createElement('div'); 
-        card.appendChild(back); 
-        back.classList.add('back'); 
+        const bookInfo = document.createElement('div'); 
+        card.appendChild(bookInfo); 
+        bookInfo.classList.add('book-info'); 
         
             let ul = document.createElement('ul')
-            back.appendChild(ul); 
+            bookInfo.appendChild(ul); 
 
             let author = createListItem(myLibrary[i].author)
             ul.appendChild(author); 
@@ -142,8 +142,17 @@ function displayBooks() {
             } else {
                 isRead.textContent = "Not Finished"
             }
+        
+        const readWrapper = document.createElement('div'); 
+        card.appendChild(readWrapper); 
+        readWrapper.className = "read-wrapper"; 
+
+        const readText = document.createElement('div'); 
+        readWrapper.appendChild(readText); 
+        readText.textContent = "Read?"
+
         const rBtn = document.createElement('button'); 
-        back.appendChild(rBtn); 
+        readWrapper.appendChild(rBtn); 
         rBtn.classList.add("read-button"); 
     }
 
@@ -193,3 +202,12 @@ function onClickHeader(ele) {
         }
     }
 }
+
+const readButtons = document.querySelectorAll('.read-button'); 
+readButtons.forEach((button) => { 
+    button.addEventListener('click', (event) => {
+
+    })
+    
+})
+

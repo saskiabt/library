@@ -25,7 +25,7 @@ body {
 }
 
 #title-text { 
-    padding: 10px 0px 30px 20px;
+    padding: 10px 0px 15px 20px;
     display: flex;
     font-family: ohm-bold,sans-serif;
     font-weight: 700;
@@ -141,6 +141,7 @@ button {
     transform: translate(-50%, -50%);
     width: 47vh;
     height: 38vh;
+    overflow: auto;
 }
 
 
@@ -164,7 +165,8 @@ button {
 
 #library-wrapper { 
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-flow: row;
     gap: 30px;
     justify-content: space-evenly;
     padding-top: 100px;
@@ -176,11 +178,18 @@ button {
 }
 
 .card { 
-    border: 2px solid rgb(241, 234, 234);
+    /* border: 2px solid rgb(241, 234, 234); */
     /* padding: 10px 20px 20px 20px; */
     padding: 20px 30px;
-
+    background-color: #293e8b;
+    color: white;
+    overflow: auto;
 } 
+
+.card-second { 
+    background-color: white;
+    color: #293e8b;
+}
 
 .front { 
     display: flex;
@@ -248,4 +257,9 @@ button {
 .book-is-read { 
     background-color: white;
     color: blue;
+}
+
+.read-wrapper { 
+    display: flex;
+    justify-content: space-between;
 }
