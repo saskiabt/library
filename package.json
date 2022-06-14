@@ -1,0 +1,23 @@
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "In this project I am creating a library app that takes user input for BOOK INFO, and creates a javascript object with it, storing it in the user's 'library' within the app.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saskiabt/library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saskiabt/library/issues"
+  },
+  "homepage": "https://github.com/saskiabt/library#readme",
+  "devDependencies": {
+    "sass": "^1.52.3"
+  }
+}

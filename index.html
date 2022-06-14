@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="styles.scss"> 
     <link rel="stylesheet" href="https://use.typekit.net/lnn4qbi.css">
 </head>
 <body>
-    <div id = "content">
+    <div id = "body-content" class = "blur">
         <div id = "header">
             <div id = "title-text">Library</div>
             <!-- <div id = "button-box">
@@ -17,58 +17,57 @@
             </div> -->
         </div>
         <div id = "hero">
-           
-            <div id = "popup-form">
-                <div class = "form-container">
-                    <ul>
-                        <li id="form-item-1" name ="book-form">
-                            <label for="title">Title:</label>
-                            <input type = "text" id = "title" name='form-input'>
-                        </li>
-                        <li id="form-item-2" name ="book-form">
-                            <label for="author">Author:</label>
-                            <input type = "text" id = "author" name='form-input'>
-                        </li>
-                        <li id="form-item-3" name ="book-form">
-                            <label for="pages">Page Count:</label>
-                            <input type = "text" id = "pages" name='form-input'>
-                        </li>
-                        <li id="form-item-4">
-                            <div>Have you finished this book?</div>
-                            <div>
-                                <input type = "radio"  id = "finished" name = "finished-check" class="checkbox">
-                                    <label for = "finished">Yes</label>
-                                <input type = "radio" id = "not-finished" name = "finished-check" class="checkbox">
-                                    <label for = "not-finished">No</label>
-
-                            </div>
-                        </li>
-                        <li id="form-item-5" name="form-input">
-                            <div>Review<div>
-                                <input type = "radio"  id = "1star" name = "user-review" value= "1" class="stars">
-                                    <label for = "1star">1</label>
-                                <input type = "radio" id = "2star" name = "user-review" value = "2" class="stars">
-                                    <label for = "2star">2</label>
-                                <input type = "radio"  id = "3star" name = "user-review" value= "3" class="stars">
-                                    <label for = "3star">3</label>
-                                <input type = "radio"  id = "4star" name = "user-review" value = "4" class="stars">
-                                    <label for = "4star">4</label>
-                                <input type = "radio"  id = "5star" name = "user-review" value = "5" class="stars">
-                                    <label for = "5star">5</label>
-                        </li>
-                        <li id = "list-item-6">
-                            <button id = "submit-btn">Submit</button>
-                            <button id = "cancel-btn">Cancel</button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
             <div id="library-wrapper"></div>
         </div>
         <div id = "footer">
             <div id = "button-box">
-                <button id = "create-book-button">Add Book</button>
+                <button id = "create-book-button">New Book</button>
             </div>
+        </div>
+    </div>
+    <div class= "popup-form-wrapper">
+        <div id = "form-container">
+            <ul>
+                <li id="form-item-1" name ="book-form">
+                    <label for="title">Title:</label>
+                    <input type = "text" id = "title" name='form-input' placeholder = "ex. The Hobbit">
+                </li>
+                <li id="form-item-2" name ="book-form">
+                    <label for="author">Author:</label>
+                    <input type = "text" id = "author" name='form-input' placeholder = "ex. J.R.R. Tolkien">
+                </li>
+                <li id="form-item-3" name ="book-form">
+                    <label for="pages">Page Count:</label>
+                    <input type = "text" id = "pages" name='form-input' placeholder ="ex. 366">
+                </li>
+                <li id="form-item-4">
+                    <div>Have you finished this book?</div>
+                    <div>
+                        <input type = "radio"  id = "finished" name = "finished-check" class="checkbox">
+                            <label for = "finished">Yes</label>
+                        <input type = "radio" id = "not-finished" name = "finished-check" class="checkbox">
+                            <label for = "not-finished">No</label>
+
+                    </div>
+                </li>
+                <li id="form-item-5" name="form-input">
+                    <div>Review<div>
+                        <input type = "radio"  id = "1star" name = "user-review" value= "1" class="stars">
+                            <label for = "1star">1</label>
+                        <input type = "radio" id = "2star" name = "user-review" value = "2" class="stars">
+                            <label for = "2star">2</label>
+                        <input type = "radio"  id = "3star" name = "user-review" value= "3" class="stars">
+                            <label for = "3star">3</label>
+                        <input type = "radio"  id = "4star" name = "user-review" value = "4" class="stars">
+                            <label for = "4star">4</label>
+                        <input type = "radio"  id = "5star" name = "user-review" value = "5" class="stars">
+                            <label for = "5star">5</label>
+                </li>
+                <li id = "list-item-6">
+                    <button id = "cancel-btn" class = "cancel-submit">Cancel</button>
+                    <button id = "submit-btn" class = "cancel-submit">Submit</button>
+                </li>
+            </ul>
         </div>
     </div>
     <script src = "script.js"></script>
