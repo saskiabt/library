@@ -15,6 +15,7 @@ body {
     min-height: 100vh;
     justify-content: space-between;
     width: 100%;
+    background-color: #0d052f
 }
 
 #header { 
@@ -80,7 +81,8 @@ button {
     text-decoration-thickness: auto;
     width: 100%;
     max-width: 460px;
-    position: relative;
+    position: sticky;
+    top: 4rem;
     cursor: pointer;
     -webkit-user-select: none;
     touch-action: manipulation;
@@ -106,12 +108,6 @@ button {
     left: 2px;
 }
 
-/* @media (min-width: 768px) {
-    #create-book-button {
-    padding: 0.75rem 2rem;
-    font-size: 1.75rem;
-    }
-} */
 
 .popup-form-wrapper { 
     padding: 0px 30px;
@@ -133,10 +129,10 @@ button {
     min-width: 25vh;
     justify-content: center;
     align-items: center;
-    padding: 28px 60px;
+    padding: 15px 30px;
     background-color: white;
     position: absolute;
-    top: 60%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 47vh;
@@ -165,7 +161,7 @@ button {
 
 #library-wrapper { 
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-flow: row;
     gap: 30px;
     justify-content: space-evenly;
@@ -184,9 +180,10 @@ button {
     background-color: #293e8b;
     color: white;
     overflow: auto;
+    min-width: 15vw;
 } 
 
-.card-second { 
+.card.active{ 
     background-color: white;
     color: #293e8b;
 }
@@ -200,7 +197,7 @@ button {
     padding: 6px;
 }
 
-.back > ul { 
+.book-info > ul { 
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -215,6 +212,7 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    background-color: #0d052f;
    
 }
 
@@ -225,14 +223,14 @@ button {
 }
 
 .cancel-submit { 
-    padding: 10px 20px;
+    padding: 5px 10px;
     background-color: #ffb79fc9;
     border: 0.2px solid #0c052f;
     /* color: black; */
     position: relative;
     font-family: inherit;
     color: rgb(4, 18, 78);
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .cancel-submit:hover { 
@@ -263,3 +261,8 @@ button {
     display: flex;
     justify-content: space-between;
 }
+
+.book-title { 
+    font-size: 1.8rem;
+}
+

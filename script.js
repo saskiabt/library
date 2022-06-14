@@ -58,8 +58,8 @@ function clearForm () {
 function Book(title,author,pages,review,isRead) {
     // the constructor
     this.title = `${title}`;
-    this.author = `Author: ${author}`; 
-    this.pages = `Page Count: ${pages}`; 
+    this.author = `by ${author}`; 
+    this.pages = `${pages} Pages`; 
     this.review = `My Rating: ${review}/5 Stars`; 
     this.isRead = isRead; 
 }
@@ -84,16 +84,6 @@ function addBookToLibrary() {
             rating = radio.value;
         } 
     }
-    // if (title.value == '') { 
-    //     title.classList.add('error'); 
-    //     return; 
-    // } else if (author.value = '') { 
-    //     author.classList.add('error')
-    //     return; 
-    // } else if (pageCount.value = '') { 
-    //     pageCount.classList.add('error'); 
-    //     return;
-    // } else {
         const newBook = new Book(title,author,pageCount,rating,finishedCheck)
         myLibrary.push(newBook); 
 
@@ -135,13 +125,6 @@ function displayBooks() {
             let rating = createListItem(myLibrary[i].review)
             ul.appendChild(rating); 
 
-            let isRead = document.createElement('li'); 
-            ul.appendChild(isRead);
-            if (myLibrary[i].isRead == true) { 
-                isRead.textContent = "Finished"
-            } else {
-                isRead.textContent = "Not Finished"
-            }
         
         const readWrapper = document.createElement('div'); 
         card.appendChild(readWrapper); 
@@ -154,6 +137,22 @@ function displayBooks() {
         const rBtn = document.createElement('button'); 
         readWrapper.appendChild(rBtn); 
         rBtn.classList.add("read-button"); 
+
+        if (myLibrary[i].isRead == true) { 
+            rBtn.textContent = "✓"
+            card.classList.toggle('active')
+        } else {
+            rBtn.textContent = ""
+        }
+
+        rBtn.addEventListener('click', () => { 
+            card.classList.toggle('active')
+            if (rBtn.textContent == '') { 
+                rBtn.textContent = "✓"
+            } else {
+                rBtn.textContent = ''
+            }
+        })
     }
 
     // creates <li>text</li> element
@@ -185,29 +184,10 @@ function toggleBlur() {
     blur.classList.toggle('active')
 }
 
-// handler function for checking if 'checkbox' input element has been checked ; first set ele to checked and then run function to either clear or check boxes 
-function onClickHeader(ele) {
-    var checkboxes = document.getElementsByTagName('input');
-    if (ele.checked) {
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].type == 'checkbox') {
-                checkboxes[i].checked = true;
-            }
-        }
-    } else {
-        for (var i = 0; i < checkboxes.length; i++) {
-            if (checkboxes[i].type == 'checkbox') {
-                checkboxes[i].checked = false;
-            }
-        }
-    }
-}
 
-const readButtons = document.querySelectorAll('.read-button'); 
-readButtons.forEach((button) => { 
-    button.addEventListener('click', (event) => {
 
-    })
-    
-})
+
+
+
+
 
