@@ -31,9 +31,9 @@ body {
     font-family: ohm-bold,sans-serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 115px;
+    font-size: 96px;
     color:#0d2da1; /* BLUE */
-    letter-spacing: px;
+    letter-spacing: 1.3px;
     text-shadow: 0px 0.5px 0.05px #ffd3d3;
 }
 
@@ -67,29 +67,33 @@ button {
 }
 
 #create-book-button { 
-    font-family: balto,sans-serif;
+    padding: 13px 27px;
+    padding-top: 2px;
+    font-family: balto, sans-serif;
     font-style: normal;
-    background-color: #0d2da1;
-    border: 0 solid #ffffff;
+    background-color: rgb(13, 45, 161);
     box-sizing: border-box;
     color: white;
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 700;
     justify-content: center;
-    line-height: 1.75rem;
-    padding: 10px 40px;
     text-align: center;
-    text-decoration: none #000000 solid;
-    text-decoration-thickness: auto;
     width: 100%;
-    max-width: 460px;
+    max-width: 380px;
     position: sticky;
     top: 4rem;
     cursor: pointer;
-    -webkit-user-select: none;
+    user-select: none;
     touch-action: manipulation;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255);
+    border-image: initial;
+    text-decoration: none solid rgb(0, 0, 0);
+    bottom: 30px;
     visibility: visible;
+   
 }
     
 #create-book-button:focus {
@@ -178,16 +182,16 @@ button {
 }
 
 .card { 
-    /* border: 2px solid rgb(241, 234, 234); */
-    /* padding: 10px 20px 20px 20px; */
-    padding: 20px 30px;
+    font-family: balto,sans-serif;
+    font-weight: 400;
+    font-style: normal;
     background-color: #293e8b;
     color: white;
     overflow: auto;
     min-width: 15vw;
     display: flex;
     flex-direction: column;
-    transition: all .2s ease-in-out; 
+    transition: all .2s ease-in-out;
 
 } 
 
@@ -215,6 +219,11 @@ button {
     padding: 6px;
 }
 
+.book-info { 
+    font-size: 1.7vh;
+    padding: 20px 30px;
+    padding-right: 24px;
+}
 .book-info > ul { 
     list-style-type: none;
     display: flex;
@@ -276,9 +285,12 @@ button {
 
 .read-button { 
     border-radius: 20px 20px;
-    /* padding: 8px; */
-    height: 30px;
-    width: 30px;
+    padding: 6px 8px;
+    font-family: balto,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: hsl(218deg 30% 51%);
+    border: none;
 }
 
 .book-is-read { 
@@ -291,12 +303,18 @@ button {
     justify-content: space-between;
     gap: 20px;
     width: 100%;
+    align-items: flex-end;
 }
 
 .book-title { 
+    font-family: balto,sans-serif;
+    font-style: normal;
+    /* color: white; */
     font-size: 1.5rem;
     height: 50%;
     font-weight: bold;
+    padding: 20px 30px;
+    padding-right: 24px;
 }
 
 .form-error { 
@@ -312,3 +330,36 @@ input[type=text] {
     border-radius: 2px;
     border: .2px solid grey;
  }
+
+ .material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 40
+  }
+
+  .trash-wrapper { 
+      display: flex;
+      justify-content: flex-end;
+  }
+
+#trash-button { 
+    font-family: balto,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding: 10px;
+    /* background-color: #0d2da1; */
+    color: hsl(218deg 30% 51%);
+    border: none;
+    background-color: transparent;
+}
+
+#trash-button:hover {
+    color: rgb(253, 253, 253);
+    background-color: red;
+}
+
+.read-text { 
+    align-self: center;
+}

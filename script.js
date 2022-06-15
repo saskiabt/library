@@ -128,18 +128,33 @@ function displayBooks() {
     for(let i=0; i<myLibrary.length; i++) { 
 
         const card = document.createElement('div'); 
-        card.classList.add('card'); 
-        libraryWrapper.appendChild(card); 
+            card.classList.add('card'); 
+            libraryWrapper.appendChild(card); 
+
+        const trashWrapper = document.createElement('div'); 
+            card.appendChild(trashWrapper); 
+            trashWrapper.classList.add('trash-wrapper');
+
+        const trashButton = document.createElement('button'); 
+            trashWrapper.appendChild(trashButton); 
+            trashButton.setAttribute('id', 'trash-button'); 
+            const icon = document.createElement('span'); 
+            trashButton.appendChild(icon); 
+            icon.classList.add("material-symbols-outlined")
+            icon.textContent = "delete";
+
+       
+
 
         const title = document.createElement('div'); 
-        card.appendChild(title); 
-        title.classList.add('book-title'); 
-        title.textContent = myLibrary[i].title; 
+            card.appendChild(title); 
+            title.classList.add('book-title'); 
+            title.textContent = myLibrary[i].title; 
 
         const bookInfo = document.createElement('div'); 
-        card.appendChild(bookInfo); 
-        bookInfo.classList.add('book-info'); 
-        
+            card.appendChild(bookInfo); 
+            bookInfo.classList.add('book-info'); 
+            
             let ul = document.createElement('ul')
             bookInfo.appendChild(ul); 
 
@@ -155,44 +170,49 @@ function displayBooks() {
 
 
             const readWrapper = document.createElement('div'); 
-            ul.appendChild(readWrapper); 
-            readWrapper.className = "read-wrapper"; 
+                ul.appendChild(readWrapper); 
+                readWrapper.className = "read-wrapper"; 
 
             const readText = document.createElement('div'); 
-            readText.classList.add('read-text')
-            readWrapper.appendChild(readText); 
-            readText.textContent = myLibrary[i].isRead;
+                readText.classList.add('read-text')
+                readWrapper.appendChild(readText); 
+                readText.textContent = myLibrary[i].isRead;
 
-            const rBtn = document.createElement('button'); 
-            readWrapper.appendChild(rBtn); 
-            rBtn.classList.add("read-button"); 
+                const rBtn = document.createElement('button'); 
+                readWrapper.appendChild(rBtn); 
+                rBtn.classList.add("read-button"); 
 
-        if (readText.textContent == "Finished") { 
-            rBtn.textContent = "✓"
-            card.classList.add('active')
-        
-        } else {
-            rBtn.textContent = ""
-            card.classList.remove('active'); 
-        }
-
-        rBtn.addEventListener('click', () => {
-            myLibrary[i].toggleRead(); 
-            toggleReadClass();
-
-            function toggleReadClass() { 
-                if (myLibrary[i].isRead == "Not Finished") { 
-                    rBtn.textContent = ""
-                    card.classList.remove('active'); 
-                    readText.textContent = myLibrary[i].isRead
-                } else if (myLibrary[i].isRead == "Finished") { 
-                    rBtn.textContent = "✓"
-                    card.classList.add('active')
-                    readText.textContent = myLibrary[i].isRead
-                }
-                
+            if (readText.textContent == "Finished") { 
+                rBtn.textContent = "✓"
+                card.classList.add('active')
+            
+            } else {
+                rBtn.textContent = ""
+                card.classList.remove('active'); 
             }
-        })
+
+            rBtn.addEventListener('click', () => {
+                myLibrary[i].toggleRead(); 
+                toggleReadClass();
+
+                function toggleReadClass() { 
+                    if (myLibrary[i].isRead == "Not Finished") { 
+                        rBtn.textContent = ""
+                        card.classList.remove('active'); 
+                        readText.textContent = myLibrary[i].isRead
+                    } else if (myLibrary[i].isRead == "Finished") { 
+                        rBtn.textContent = "✓"
+                        card.classList.add('active')
+                        readText.textContent = myLibrary[i].isRead
+                    }
+                    
+                }
+            })
+
+            trashButton.addEventListener('click', () => { 
+                myLibrary.splice(i,1); 
+                card.remove(); 
+            })
     }
 }
 
