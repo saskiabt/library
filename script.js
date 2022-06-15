@@ -40,10 +40,22 @@ function closeForm() {
     
 }
 
+// CLEAR THE POPUP FORM  
 function clearForm () { 
-    document.querySelector("#title").value = '';
-    document.querySelector("#author").value = '';
-    document.querySelector("#pages").value = '';
+    const title = document.querySelector("#title")
+    title.value = '';
+    title.classList.remove('form-error')
+
+    const author = document.querySelector("#author")
+    author.value = '';
+    author.classList.remove('form-error')
+
+
+    const pages = document.querySelector("#pages")
+    pages.value = '';
+    title.classList.remove('form-error')
+
+
     document.querySelector("#finished").checked = false;
     document.querySelector("#not-finished").checked = false;
     document.querySelector("#\\31 star").checked = false
@@ -84,9 +96,9 @@ function addBookToLibrary() {
             rating = radio.value;
         } 
     }
-        const newBook = new Book(title,author,pageCount,rating,finishedCheck)
-        myLibrary.push(newBook); 
-
+    
+    const newBook = new Book(title,author,pageCount,rating,finishedCheck)
+    myLibrary.push(newBook); 
 }
 
 
@@ -124,6 +136,7 @@ function displayBooks() {
 
             let rating = createListItem(myLibrary[i].review)
             ul.appendChild(rating); 
+            
 
         
         const readWrapper = document.createElement('div'); 
@@ -146,7 +159,8 @@ function displayBooks() {
         }
 
         rBtn.addEventListener('click', () => { 
-            card.classList.toggle('active')
+            card.classList.toggle('active');
+            
             if (rBtn.textContent == '') { 
                 rBtn.textContent = "✓"
             } else {
@@ -166,10 +180,14 @@ function displayBooks() {
 
 // Save inputs and create new book card with book info when submit button is pressed: 
 const submitButton = document.querySelector("#submit-btn"); 
-submitButton.addEventListener('click', () => {
+submitButton.addEventListener('click', (event) => {
+    if (checkForm(document.querySelector("#title")) == false || checkForm(document.querySelector("#author")) == false) { 
+        event.preventDefault()
+    } else { 
+        submitCard();
+        clearForm();
+    }
 
-   submitCard(); 
-    clearForm(); 
 
    function submitCard() { 
         addBookToLibrary(); 
@@ -185,6 +203,20 @@ function toggleBlur() {
 }
 
 
+// check text input of form for blanks 
+function checkForm(elem) { 
+    let isValid
+    if (elem.value === '') { 
+        elem.classList.add('form-error'); 
+        elem.setAttribute('placeholder', "Please enter informaton before proceeding")
+        isValid = false;
+    } else { 
+        elem.classList.remove('form-error')
+        isValid = true
+    }
+
+    return isValid; 
+}
 
 
 
