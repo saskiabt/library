@@ -72,8 +72,18 @@ function Book(title,author,pages,review,isRead) {
     this.title = `${title}`;
     this.author = `by ${author}`; 
     this.pages = `${pages} Pages`; 
-    this.review = `My Rating: ${review}/5 Stars`; 
+    this.review = `My Rating: ${review}/5`; 
     this.isRead = isRead; 
+
+    if (isRead == true) {
+        this.isRead = "Finished"
+    } else { 
+        this.isRead = "Not Finished"
+    }
+}
+
+Book.prototype.toggleRead = function() { 
+
 }
 
 // Add book to myLibrary Array Function
@@ -138,22 +148,24 @@ function displayBooks() {
             ul.appendChild(rating); 
             
 
-        
-        const readWrapper = document.createElement('div'); 
-        card.appendChild(readWrapper); 
-        readWrapper.className = "read-wrapper"; 
 
-        const readText = document.createElement('div'); 
-        readWrapper.appendChild(readText); 
-        readText.textContent = "Read?"
+            const readWrapper = document.createElement('div'); 
+            ul.appendChild(readWrapper); 
+            readWrapper.className = "read-wrapper"; 
 
-        const rBtn = document.createElement('button'); 
-        readWrapper.appendChild(rBtn); 
-        rBtn.classList.add("read-button"); 
+            const readText = document.createElement('div'); 
+            readText.classList.add('read-text')
+            readWrapper.appendChild(readText); 
+            readText.textContent = myLibrary[i].isRead;
 
-        if (myLibrary[i].isRead == true) { 
+            const rBtn = document.createElement('button'); 
+            readWrapper.appendChild(rBtn); 
+            rBtn.classList.add("read-button"); 
+
+        if (myLibrary[i].isRead == "Finished") { 
             rBtn.textContent = "✓"
             card.classList.toggle('active')
+        
         } else {
             rBtn.textContent = ""
         }
@@ -181,7 +193,7 @@ function displayBooks() {
 // Save inputs and create new book card with book info when submit button is pressed: 
 const submitButton = document.querySelector("#submit-btn"); 
 submitButton.addEventListener('click', (event) => {
-    if (checkForm(document.querySelector("#title")) == false || checkForm(document.querySelector("#author")) == false) { 
+    if (checkForm(document.querySelector("#title")) == false || checkForm(document.querySelector("#author")) == false || checkForm(document.querySelector("#pages")) == false) { 
         event.preventDefault()
     } else { 
         submitCard();
@@ -197,10 +209,6 @@ submitButton.addEventListener('click', (event) => {
     }
 }); 
 
-function toggleBlur() { 
-    let blur = document.querySelector('.blur'); 
-    blur.classList.toggle('active')
-}
 
 
 // check text input of form for blanks 
@@ -208,16 +216,22 @@ function checkForm(elem) {
     let isValid
     if (elem.value === '') { 
         elem.classList.add('form-error'); 
-        elem.setAttribute('placeholder', "Please enter informaton before proceeding")
+        elem.setAttribute('placeholder', "Required Field")
         isValid = false;
     } else { 
         elem.classList.remove('form-error')
         isValid = true
+        elem.setAttribute('placeholder', '');
     }
 
     return isValid; 
 }
 
+// toggle blur class for background when form pops up; 
+function toggleBlur() { 
+    let blur = document.querySelector('.blur'); 
+    blur.classList.toggle('active')
+}
 
 
 

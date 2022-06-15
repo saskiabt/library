@@ -141,6 +141,7 @@ button {
     width: 47vh;
     height: 38vh;
     overflow: auto;
+    border-radius: 18px;
 }
 
 
@@ -276,6 +277,8 @@ button {
 .read-wrapper { 
     display: flex;
     justify-content: space-between;
+    gap: 20px;
+    width: 100%;
 }
 
 .book-title { 
@@ -289,3 +292,9 @@ button {
 input[type=text] {
     min-width: 60%
 }
+
+
+input[type=text] {
+    border-radius: 2px;
+    border: .2px solid grey;
+ }
