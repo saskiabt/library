@@ -82,8 +82,13 @@ function Book(title,author,pages,review,isRead) {
     }
 }
 
+// Edit 
 Book.prototype.toggleRead = function() { 
-
+    if (this.isRead == "Finished") { 
+        this.isRead = "Not Finished"
+    } else if (this.isRead == "Not Finished") {
+        this.isRead = "Finished"
+    }
 }
 
 // Add book to myLibrary Array Function
@@ -162,31 +167,32 @@ function displayBooks() {
             readWrapper.appendChild(rBtn); 
             rBtn.classList.add("read-button"); 
 
-        if (myLibrary[i].isRead == "Finished") { 
+        if (readText.textContent == "Finished") { 
             rBtn.textContent = "✓"
-            card.classList.toggle('active')
+            card.classList.add('active')
         
         } else {
             rBtn.textContent = ""
+            card.classList.remove('active'); 
         }
 
-        rBtn.addEventListener('click', () => { 
-            card.classList.toggle('active');
-            
-            if (rBtn.textContent == '') { 
-                rBtn.textContent = "✓"
-            } else {
-                rBtn.textContent = ''
+        rBtn.addEventListener('click', () => {
+            myLibrary[i].toggleRead(); 
+            toggleReadClass();
+
+            function toggleReadClass() { 
+                if (myLibrary[i].isRead == "Not Finished") { 
+                    rBtn.textContent = ""
+                    card.classList.remove('active'); 
+                    readText.textContent = myLibrary[i].isRead
+                } else if (myLibrary[i].isRead == "Finished") { 
+                    rBtn.textContent = "✓"
+                    card.classList.add('active')
+                    readText.textContent = myLibrary[i].isRead
+                }
+                
             }
         })
-    }
-
-    // creates <li>text</li> element
-    function createListItem(text) { 
-        let li = document.createElement('li'); 
-        li.classList.add("card-info");
-        li.textContent = text
-        return li;
     }
 }
 
@@ -233,7 +239,26 @@ function toggleBlur() {
     blur.classList.toggle('active')
 }
 
+  // helper function to create <li>text</li> element
+  function createListItem(text) { 
+    let li = document.createElement('li'); 
+    li.classList.add("card-info");
+    li.textContent = text
+    return li;
+}
 
+    // let readButtons = document.querySelectorAll('.read-button'); 
+    // readButtons.forEach((button) => { 
+    //     button.addEventListener('click', (event) => {
+    //         for (let i=0; i<myLibrary.length; i++) { 
+    //             if (event.target = readButtons[i]) {
+    //                 myLibrary[i].toggleRead();
+    //                 console.log(myLibrary[i]); 
+    //                 console.log(myLibrary[i].isRead)
+    //             }
+    //         }
+    //     })
+    // }); 
 
 
 

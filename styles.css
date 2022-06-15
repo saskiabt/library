@@ -185,14 +185,26 @@ button {
     color: white;
     overflow: auto;
     min-width: 15vw;
-    shape-outside: circle(70%);
-    clip-path: circle(80%);
+    display: flex;
+    flex-direction: column;
+    transition: all .2s ease-in-out; 
+
 } 
 
 .card.active{ 
     background-color: white;
     color: #293e8b;
+    transition: all .2s ease-in-out;
 }
+
+.card:hover { 
+    transform: scale(1.1);
+}
+
+.card.active:hover {
+    transform: scale(1.1);
+}
+
 
 .front { 
     display: flex;
@@ -282,7 +294,9 @@ button {
 }
 
 .book-title { 
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    height: 50%;
+    font-weight: bold;
 }
 
 .form-error { 
