@@ -293,6 +293,7 @@ button {
     font-style: normal;
     color: white;
     border: none;
+    box-shadow: inset 0px 0px 0px 1px #dddeff85;
 }
 
 .book-is-read { 
@@ -365,4 +366,17 @@ input[type=text] {
 
 .read-text { 
     align-self: center;
+}
+
+.signature { 
+    display: flex;
+    gap: 3px;
+    font-size: 1em;
+    align-items: flex-end;
+    padding-bottom: 22px;
+    padding-right: 11px;
+    font-family: lores-12,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #1532a3; 
 }
