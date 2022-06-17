@@ -70,6 +70,7 @@ button {
     padding: 13px 27px;
     padding-top: 2px;
     font-family: balto, sans-serif;
+    font-variant: small-caps;
     font-style: normal;
     background-color: rgb(13, 45, 161);
     box-sizing: border-box;
@@ -77,6 +78,7 @@ button {
     display: flex;
     font-size: 1.2rem;
     font-weight: 700;
+    letter-spacing: 2px;
     justify-content: center;
     text-align: center;
     width: 100%;
@@ -142,8 +144,8 @@ button {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 47vh;
-    height: 38vh;
+    width: 45vh;
+    height: 60vh;
     overflow: auto;
     border-radius: 18px;
 }
@@ -160,7 +162,7 @@ button {
 
 }
 
-#form-container > ul > li { 
+#form-container > ul > div >li { 
     display: flex;
     justify-content: space-between;
     align-items: space-between;
@@ -258,7 +260,7 @@ button {
     position: relative;
     font-family: inherit;
     color: rgb(48, 43, 62);
-    font-size: 20px;
+    font-size: 18px;
     /* border-radius: 18px; */
     transition: color .2s ease-out 100ms;
     box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
@@ -332,6 +334,7 @@ input[type=text] {
     border-radius: 2px;
     border: .1px groove #516fa2;
     background-color: #f2f4ff;
+    font-family: balto, sans-serif;
 }
 
 
@@ -368,7 +371,7 @@ input[type=text] {
     align-self: center;
 }
 
-.signature { 
+#signature { 
     display: flex;
     gap: 3px;
     font-size: 1em;
@@ -379,4 +382,24 @@ input[type=text] {
     font-weight: 400;
     font-style: normal;
     color: #1532a3; 
+}
+
+
+label { 
+    font-size: 16px;
+}
+
+#form-item-4 > div , #form-item-5 > div { 
+    font-size: 16px;
+}
+
+
+#form-container > ul > div >li { 
+    display: flex;
+    flex-direction: column;
+}
+
+#submit-btn:hover { 
+    background-color: #2a4160;
+    color: #ffffff;
 }

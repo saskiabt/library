@@ -26,14 +26,12 @@ bookButton.addEventListener('click', () => {
 function openForm() { 
     toggleBlur();
     formWrapper.style.display = "block"; 
-    // formWrapper.style.zIndex = "1"
 
     bookButton.style.visibility = "hidden"; 
     bookButton.style.padding = "0px";
 }
 function closeForm() { 
     formWrapper.style.display = "none"; 
-    // formWrapper.style.zIndex = "-1"
     bookButton.style.visibility = "visible";
     bookButton.style.padding = "10px";
     toggleBlur();
@@ -82,7 +80,7 @@ function Book(title,author,pages,review,isRead) {
     }
 }
 
-// Edit 
+// Toggle "read" status on MyLibrary object 
 Book.prototype.toggleRead = function() { 
     if (this.isRead == "Finished") { 
         this.isRead = "Not Finished"
@@ -117,7 +115,7 @@ function addBookToLibrary() {
 }
 
 
-// Function to display "card" with book
+// Function to display "card" with book info
 function displayBooks() { 
     const libraryWrapper = document.querySelector("#library-wrapper"); 
 
@@ -267,18 +265,5 @@ function toggleBlur() {
     return li;
 }
 
-    // let readButtons = document.querySelectorAll('.read-button'); 
-    // readButtons.forEach((button) => { 
-    //     button.addEventListener('click', (event) => {
-    //         for (let i=0; i<myLibrary.length; i++) { 
-    //             if (event.target = readButtons[i]) {
-    //                 myLibrary[i].toggleRead();
-    //                 console.log(myLibrary[i]); 
-    //                 console.log(myLibrary[i].isRead)
-    //             }
-    //         }
-    //     })
-    // }); 
-
-
-
+// Link to Github Source Code on Signature Click
+const signature = document.getElementById('signature'); 
