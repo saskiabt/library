@@ -90,6 +90,16 @@ label {
     transform: scale(0.9);
 }
 
+.card.active:active {
+    transform: scale(0.9);
+    transition: ease-in-out .1s;
+}
+
+.card:active {
+    transform: scale(0.9);
+    transition: ease-in-out .1s;
+}
+
 #footer {
     margin-top: auto;
     display: flex;
