@@ -5,8 +5,8 @@
     font-style: normal;
     color: #0d2da1;
     letter-spacing: 1.3px;
-    /* padding: 42px 0px 0px 23px; */
-    font-size: 90px;
+    padding: 42px 0px 0px 23px;
+    font-size: 15vw;
     text-shadow: rgb(255, 211, 211) 0px 0.5px 0.05px;
 }
 
@@ -121,7 +121,7 @@ label {
 }
 
 #signature { 
-    font-size: 1.1em;
+    font-size: 3vw;
     display: flex;
     gap: 3px;
     align-items: flex-end;
