@@ -13,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     width: 100%;
     background-color: #0d052f
 }
@@ -50,11 +50,12 @@ body {
 }
 
 #button-box { 
-    margin-bottom: 30px;
-    margin-right: 20px;
+    /* margin-bottom: 30px;
+    margin-right: 20px; */
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     gap: 20px;
+    width: 100vw;
 }
 
 button { 
@@ -67,55 +68,34 @@ button {
 }
 
 #create-book-button { 
-    padding: 13px 27px;
-    padding-top: 2px;
-    font-family: balto, sans-serif;
-    font-variant: small-caps;
-    font-style: normal;
-    background-color: rgb(13, 45, 161);
-    box-sizing: border-box;
-    color: white;
-    display: flex;
+    font-family: balto,sans-serif;
     font-size: 1.2rem;
     font-weight: 700;
+    font-style: normal;
     letter-spacing: 2px;
+    background-color: rgb(35, 18, 121);
+    color: white;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
-    text-align: center;
+    align-items: center;
+    height: 8vh;
+    padding: 20px 0px;
     width: 100%;
-    max-width: 380px;
-    position: sticky;
-    top: 4rem;
     cursor: pointer;
     user-select: none;
     touch-action: manipulation;
-    border-width: 0px;
-    border-style: solid;
-    border-color: rgb(255, 255, 255);
-    border-image: initial;
-    text-decoration: none solid rgb(0, 0, 0);
-    bottom: 30px;
     visibility: visible;
-   
+
+    border: none;
 }
     
 #create-book-button:focus {
     outline: 0;
 }
 
-#create-book-button:after {
-    content: '';
-    position: absolute;
-    border: 2px solid #3ed21f;
-    bottom: 4px;
-    left: 4px;
-    width: calc(100% - 1px);
-    height: calc(100% - 1px);
-}
 
-#create-book-button:hover:after {
-    bottom: 2px;
-    left: 2px;
-}
+
 
 #create-book-button:hover { 
     background-color: #c4d3fc; 
@@ -304,7 +284,7 @@ button {
 }
 
 .read-button:hover { 
-    border: 1px inset yellow;
+    /* border: 1px inset yellow; */
 }
 
 .book-is-read { 
