@@ -26,7 +26,7 @@ body {
 }
 
 #title-text { 
-    padding: 10px 0px 15px 20px;
+    padding: 42px 0px 0px 23px;
     display: flex;
     font-family: ohm-bold,sans-serif;
     font-weight: 700;
@@ -69,7 +69,7 @@ button {
 
 #create-book-button { 
     font-family: balto,sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 700;
     font-style: normal;
     letter-spacing: 2px;
@@ -367,7 +367,7 @@ input[type=text] {
     gap: 3px;
     font-size: 1em;
     align-items: flex-end;
-    padding-bottom: 22px;
+    padding-bottom: 14px;
     padding-right: 11px;
     font-family: lores-12,sans-serif;
     font-weight: 400;
