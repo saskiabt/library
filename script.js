@@ -63,7 +63,7 @@ function clearForm () {
     document.querySelector("#\\35 star").checked = false; 
 }
 
-// NON - CLASS SYNTAX: 
+// CREATE BOOK USING NON - CLASS SYNTAX: 
 // // Create book object function: 
 // function Book(title,author,pages,review,isRead) {
 //     // the constructor
@@ -87,7 +87,6 @@ function clearForm () {
 // }
 
 // CREATE OBJECT USING CLASS SYNTAX (REWORK): 
-
 class Book {
     constructor(title,author,pages,review,isRead) {
         this.title = `${title}`;
