@@ -64,30 +64,46 @@ function clearForm () {
 }
 
 
-// Create book object function: 
-function Book(title,author,pages,review,isRead) {
-    // the constructor
-    this.title = `${title}`;
-    this.author = `by ${author}`; 
-    this.pages = `${pages} Pages`; 
-    this.review = `My Rating: ${review}/5`; 
-    this.isRead = isRead; 
+// // Create book object function: 
+// function Book(title,author,pages,review,isRead) {
+//     // the constructor
+//     this.title = `${title}`;
+//     this.author = `by ${author}`; 
+//     this.pages = `${pages} Pages`; 
+//     this.review = `My Rating: ${review}/5`; 
+//     this.isRead = isRead; 
 
-    if (isRead == true) {
-        this.isRead = "Finished"
-    } else { 
-        this.isRead = "Not Finished"
-    }
-}
+//     isRead == true ? this.isRead = "Finished" : this.isRead = "Not Finished"; 
 
-// Toggle "read" status on MyLibrary object 
-Book.prototype.toggleRead = function() { 
-    if (this.isRead == "Finished") { 
-        this.isRead = "Not Finished"
-    } else if (this.isRead == "Not Finished") {
-        this.isRead = "Finished"
+// }
+
+// // Toggle "read" status on MyLibrary object 
+// Book.prototype.toggleRead = function() { 
+//     if (this.isRead == "Finished") { 
+//         this.isRead = "Not Finished"
+//     } else if (this.isRead == "Not Finished") {
+//         this.isRead = "Finished"
+//     }
+// }
+
+class Book {
+    constructor(title,author,pages,review,isRead) {
+        this.title = `${title}`;
+        this.author = `by ${author}`; 
+        this.pages = `${pages} Pages`; 
+        this.review = `My Rating: ${review}/5`; 
+        this.isRead = isRead; 
+        isRead == true ? this.isRead = "Finished" : this.isRead = "Not Finished"; 
+    };
+
+    toggleRead = () => {
+        if (this.isRead == "Finished") { 
+            this.isRead = "Not Finished"
+        } else if (this.isRead == "Not Finished") {
+            this.isRead = "Finished"
+        }
     }
-}
+}; 
 
 // Add book to myLibrary Array Function
 function addBookToLibrary() { 
