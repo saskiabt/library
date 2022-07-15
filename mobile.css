@@ -132,6 +132,12 @@ label {
     color: #1532a3;
     padding-left: 5px;
     padding-bottom: 14px;
+    cursor: grab;
+}
+
+#signature:hover {
+    text-decoration: underline;
+    opacity: 90%;
 }
 
 #player-one-wrapper > div:nth-child(3) {

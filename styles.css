@@ -373,8 +373,13 @@ input[type=text] {
     font-weight: 400;
     font-style: normal;
     color: #1532a3; 
+    cursor: pointer;
 }
 
+#signature:hover {
+    text-decoration: underline;
+    opacity: 90%;
+}
 
 label { 
     font-size: 16px;

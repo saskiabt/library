@@ -283,4 +283,6 @@ function toggleBlur() {
 }
 
 // Link to Github Source Code on Signature Click
-const signature = document.getElementById('signature'); 
+document.getElementById('signature').addEventListener('click', () => {
+    window.open('https://github.com/saskiabt/library','_blank')
+});
